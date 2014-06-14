@@ -1,0 +1,30 @@
+#include <iostream>
+#include <math.h>
+#include <cstdlib>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+
+int proxy;
+
+int main()
+{
+
+  ofstream outp;
+  outp.open("out.txt");
+
+  for(int i = 0; i < 50; i++)
+    {
+      double x = rand();
+      double y = rand();
+      outp << x << "\t" << y << endl;
+    }
+  outp.close();
+
+  ifstream in;
+  in.open("out.txt");
+
+
+  return 0;
+}

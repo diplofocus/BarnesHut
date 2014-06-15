@@ -109,7 +109,7 @@ Node::Node(Body** bodies, int listLength, double nodeSize, Vect nodeCent, bool _
       swCent.x = _cent.x - nodeSize/2;
       swCent.y = _cent.y - nodeSize/2;
       
-      cout << neCounter << " " << nwCounter << " " << seCounter << " " << swCounter << endl;
+      //    cout << neCounter << " " << nwCounter << " " << seCounter << " " << swCounter << endl;
       
       if(neCounter != 0)
 	_ne = new Node(neBodies, neCounter, nodeSize/2, neCent, 0);
@@ -155,7 +155,7 @@ Vect Node::CalcForce(Body* body)
 
   if(dist / this->size > theta || isLeaf)
     {
-      Force = VectDist * (-G * (body->m * this->_m) / cube(dist));
+      Force = VectDist * (-G * (body->m * this->_m) / cube(dist+eta));
     }
   else
     {

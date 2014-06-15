@@ -14,11 +14,13 @@ int main()
   ofstream outp;
   outp.open("in.txt");
 
-  for(int i = 0; i < 500; i++)
+  for(int i = 0; i < 5; i++)
     {
-      double x = rand();
-      double y = rand();
-      outp << x << "\t" << y << "\t" << 100000 << endl;
+      double x = rand() / 1E5 - 0.5 * 1e3;
+      double y = rand() / 1E5 - 0.5 * 1e3;
+      double vx = rand() / 1e7 - 0.5 * 1e2;
+      double vy = rand() / 1e7 - 0.5 * 1e2;
+      outp << x << "\t" << y << "\t" << vx << "\t" << vy << "\t" << 1000000 << endl;
     }
   outp.close();
 
